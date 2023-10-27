@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import Post from "./Post";
+import { useGetPostsQuery } from "./postSlice";
 
 export default function Posts() {
-  const [posts, setPosts] = useState([]);
+  const { data: posts } = useGetPostsQuery();
+  /*const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -17,11 +19,11 @@ export default function Posts() {
     //console logging posts prior to mapping to see what is in it. Should be empty
     console.log(posts);
     fetchPosts();
-  }, []);
+  }, []);*/
 
   return (
     <ul>
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <Post key={post._id} post={post} />
       ))}
     </ul>
