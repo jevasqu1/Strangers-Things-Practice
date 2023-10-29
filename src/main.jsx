@@ -8,19 +8,26 @@ import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PostDetails from "./features/posts/PostDetails.jsx";
 import PostPage from "./features/posts/PostPage.jsx";
+import Root from "./features/layout/Root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PostPage />,
-  },
-  {
-    path: "/posts",
-    element: <PostPage />,
-  },
-  {
-    path: "/posts/:id",
-    element: <PostDetails />,
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <PostPage />,
+      },
+      {
+        path: "/posts",
+        element: <PostPage />,
+      },
+      {
+        path: "/posts/:id",
+        element: <PostDetails />,
+      },
+    ],
   },
 ]);
 
