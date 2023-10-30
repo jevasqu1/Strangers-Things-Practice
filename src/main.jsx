@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PostDetails from "./features/posts/PostDetails.jsx";
 import PostPage from "./features/posts/PostPage.jsx";
 import Root from "./features/layout/Root";
+import Login from "./features/auth/Login";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
