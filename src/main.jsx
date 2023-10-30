@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import store from "./store/store.js";
 import { Provider } from "react-redux";
-
+import Register from "./features/auth/Register";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PostDetails from "./features/posts/PostDetails.jsx";
 import PostPage from "./features/posts/PostPage.jsx";
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/posts/:id",
         element: <PostDetails />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

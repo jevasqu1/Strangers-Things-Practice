@@ -9,6 +9,9 @@ export default function Navbar() {
         <li>
           <Link to="/posts">Posts</Link>
         </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
       </menu>
     </nav>
   );
